@@ -34,29 +34,8 @@ jobs:
         test_type: APPIUM_JAVA_JUNIT
         test_package_file: ${{ github.workspace }}\target\zip-with-dependencies.zip
         test_package_type: APPIUM_JAVA_JUNIT_TEST_PACKAGE
-        test_spec: |
-          version: 0.1
-          phases:
-            install:
-              commands:
-                - export JAVA=8
-
-            pre_test:
-              commands:
-                - adb -s $DEVICEFARM_DEVICE_UDID shell pm grant fi.aardsoft.devicefarmsample android.permission.READ_EXTERNAL_STORAGE
-                - adb -s $DEVICEFARM_DEVICE_UDID shell pm grant fi.aardsoft.devicefarmsample android.permission.WRITE_EXTERNAL_STORAGE
-
-            test:
-              commands:
-                - adb -s $DEVICEFARM_DEVICE_UDID shell am instrument -w -r -e foo bar -e bar baz fi.aardsoft.devicefarmsample
-
-            post_test:
-              commands:
-                - adb -s $DEVICEFARM_DEVICE_UDID pull /storage/emulated/0/Android/data/fi.aardsoft.devicefarmsample/files/output.txt
-                - mv output.txt $DEVICEFARM_LOG_DIR/test-output.txt
-
-          artifacts:
-            - $DEVICEFARM_LOG_DIR
+        test_spec_file: ${{ github.workspace }}\test_spec.yml
+        test_spec_type: APPIUM_JAVA_TEST_SPEC
         remote_src: true
         
       
