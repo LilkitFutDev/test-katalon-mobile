@@ -27,9 +27,6 @@ jobs:
       uses: realm/aws-devicefarm/test-application@master
       with:
         name: schedule-run
-        file_artifacts: |
-          Test spec file.yml
-          Customer Artifacts.zip
         project_arn: ${{ secrets.AWS_PROJECT_ARN }}
         device_pool_arn: ${{ secrets.AWS_DEVICE_POOL_ARN }}
         app_file: ${{ github.workspace }}\aut\Coffee Timer.ipa
