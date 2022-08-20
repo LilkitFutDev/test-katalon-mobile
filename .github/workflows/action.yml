@@ -14,4 +14,3 @@ jobs:
       
     - name: build
       run: mvn clean package -DskipTests=true
-
