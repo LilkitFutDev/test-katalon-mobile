@@ -36,7 +36,7 @@ jobs:
         app_type: IOS_APP
         test_type: APPIUM_JAVA_JUNIT
         test_package_file: ${{ github.workspace }}\target\zip-with-dependencies.zip
-        test_package_type: APPIUM_JAVA_TEST_PACKAGE
+        test_package_type: APPIUM_JAVA_JUNIT_TEST_PACKAGE
         remote_src: true
         
         
