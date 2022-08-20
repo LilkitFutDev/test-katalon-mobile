@@ -35,7 +35,7 @@ jobs:
         test_package_file: ${{ github.workspace }}\target\zip-with-dependencies.zip
         test_package_type: APPIUM_JAVA_JUNIT_TEST_PACKAGE
         test_spec_file: ${{ github.workspace }}\test_spec.yml
-        test_spec_type: APPIUM_JAVA_TEST_SPEC
+        test_spec_type: APPIUM_JAVA_JUNIT_TEST_SPEC
         remote_src: true
         
       
